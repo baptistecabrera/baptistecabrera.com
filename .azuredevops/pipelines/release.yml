@@ -34,8 +34,6 @@ stages:
     displayName: Release Website
     steps:
     - checkout: none
-    - script: npm i @cloudflare/wrangler
-      displayName: Install Wrangler
     - task: DownloadPipelineArtifact@2
       displayName: 'Download Pipeline Artifact'
       inputs:
@@ -47,5 +45,13 @@ stages:
         runId: '$(resources.pipeline.Build.runID)'
         artifact: '$(resources.pipeline.Build.runName)'
         path: '$(artifactPath)'
-    - powershell: Get-ChildItem $(Pipeline.Workspace) -Recurse
     - powershell: Get-ChildItem $(artifactPath) -Recurse
+      displayName: List Build Artifacts
+    - script: |
+        npm i @cloudflare/wrangler
+        cd $(artifactPath)
+        CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN wrangler publish
+      displayName: Install Wrangler and Publish
+      env:
+        CF_ACCOUNT_ID: $(CloudFlareAccountId)
+        CF_API_TOKEN: $(CloudFlareApiToken)
