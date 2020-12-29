@@ -51,7 +51,7 @@ stages:
     - script: sudo apt-get install hugo
       displayName: Install Hugo
     - script: hugo
-      dispkayName: Hugo Generate
+      displayName: Hugo Generate
       workingDirectory: $(Build.Repository.LocalPath)/src
     # - task: giuliovdev.hugo-extension.hugo-build-task.HugoTask@1
     #   displayName: 'Hugo Generate'
