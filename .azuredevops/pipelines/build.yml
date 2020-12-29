@@ -31,6 +31,7 @@ stages:
   - job: Initialize
     displayName: Initialize Build
     steps:
+    - checkout: none
     - powershell: Write-Host "##vso[build.updatebuildnumber]$(Build.DefinitionName)-$(Build.BuildNumber)"
       displayName: Set Build Number
 - stage: Build
