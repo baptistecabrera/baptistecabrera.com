@@ -38,6 +38,6 @@ stages:
     - task: DownloadPipelineArtifact@2
       displayName: 'Download Pipeline Artifact'
       inputs:
-        artifact: '$(resources.pipeline.Build.runName)'
+        artifact: '$(Build.BuildNumber)'
         path: '$(Pipeline.Workspace)'
     - powershell: Get-ChildItem $(artifactPath) -Recurse
