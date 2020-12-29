@@ -32,10 +32,12 @@ stages:
   jobs:
   - job: Release
     displayName: Release Website
+    steps:
     - script: npm i @cloudflare/wrangler -g
       displayName: Install Wrangler
     - task: DownloadPipelineArtifact@2
       displayName: 'Download Pipeline Artifact'
       inputs:
-        artifact: '$(Build.DefinitionName)-$(Build.BuildNumber)'
+        artifact: '$(resources.pipeline.Build.runName)'
         path: '$(Pipeline.Workspace)'
+    - powershell: Get-ChildItem $(artifactPath) -Recurse
