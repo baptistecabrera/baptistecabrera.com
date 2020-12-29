@@ -29,6 +29,7 @@ stages:
   pool:
     name: Azure Pipelines
     vmImage: ubuntu-latest
+    demands: npm
   jobs:
   - job: Release
     displayName: Release Website
@@ -47,9 +48,9 @@ stages:
         path: '$(artifactPath)'
     - powershell: Get-ChildItem $(artifactPath) -Recurse
       displayName: List Build Artifacts
-    # - script: npm install @cloudflare/wrangler
-    #   displayName: Install Wrangler
-    #   workingDirectory: $(artifactPath)
+    - script: npm install @cloudflare/wrangler
+      displayName: Install Wrangler
+      workingDirectory: $(artifactPath)
     - script: CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN npx wrangler publish
       displayName: Publish Website
       workingDirectory: $(artifactPath)
