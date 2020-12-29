@@ -48,10 +48,10 @@ stages:
     - powershell: Get-ChildItem $(artifactPath) -Recurse
       displayName: List Build Artifacts
     - script: |
-        npm install $(artifactPath) @cloudflare/wrangler
         cd $(artifactPath)
+        npm install $(artifactPath) @cloudflare/wrangler
         ls
-        CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN wrangler publish
+        #CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN wrangler publish
       displayName: Install Wrangler and Publish
       env:
         CF_ACCOUNT_ID: $(CloudFlareAccountId)
