@@ -40,7 +40,7 @@ stages:
       displayName: 'Download Pipeline Artifact'
       inputs:
         preferTriggeringPipeline: true
-        artifact: '$(resources.pipeline.Build.runName)'
+        # artifact: '$(resources.pipeline.Build.runName)'
         path: '$(Pipeline.Workspace)'
     - powershell: Get-ChildItem $(Pipeline.Workspace) -Recurse
     # - powershell: Get-ChildItem $(artifactPath) -Recurse
