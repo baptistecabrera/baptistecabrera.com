@@ -30,6 +30,26 @@ stages:
     displayName: Build Hugo Website
     steps:
     - powershell: Write-Host "toto"
+    - task: giuliovdev.hugo-extension.hugo-build-task.HugoTask@1
+      displayName: 'Hugo generate s'
+      inputs:
+        source: $(Build.Repository.LocalPath)/src/
+        destination: $(Build.Repository.LocalPath)/src/public
+        hugoVersion: latest
+        buildDrafts: true
+    - powershell: Get-ChildItem "$(Build.Repository.LocalPath)"
+    - task: CopyFiles@2
+      displayName: 'Copy Sources to Staging'
+      inputs:
+        SourceFolder: $(Build.Repository.LocalPath)/src
+        Contents: |
+          public/**
+          wrangler.toml
+          !**\.gitignore
+        TargetFolder: '$(Build.StagingDirectory)'
+        CleanTargetFolder: true
+        OverWrite: true
+    - powershell: Get-ChildItem "$(Build.StagingDirectory)"
 
 # - template: azuredevops/pipelines/pipeline-sync-repo.yml@bca-cicd
 #   parameters:
