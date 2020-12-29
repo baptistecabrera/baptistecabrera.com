@@ -33,7 +33,7 @@ stages:
   - job: Release
     displayName: Release Website
     steps:
-    - script: npm i @cloudflare/wrangler -g
+    - script: npm i @cloudflare/wrangler
       displayName: Install Wrangler
     - task: DownloadPipelineArtifact@2
       displayName: 'Download Pipeline Artifact'
