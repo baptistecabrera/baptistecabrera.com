@@ -1,0 +1,9 @@
+baseURL = "https://www.baptistecabrera.com/"
+languageCode = "en-us"
+title = "Baptiste Cabrera"
+theme = "baptiste2021"
+enableRobotsTXT = true
+disableHugoGeneratorInject = true
+disableKinds = ["taxonomy", "taxonomyTerm"]
+[markup.goldmark.renderer]
+unsafe= true

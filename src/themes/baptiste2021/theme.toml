@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Baptiste2021"
+license = "Baptiste"
+licenselink = "https://www.baptistecabrera.com"
+description = "Baptiste 2021"
+homepage = "https://www.baptistecabrera.com"
+tags = ["blog","simple","responsive","minimal","ultraoptimized"]
+features = ["blog", "Clean and minimal", "Responsive", "Syntax highlighting",]
+min_version = "0.1"
+
+[author]
+  name = "Baptiste Cabrera"
+  homepage = "https://www.baptistecabrera.com"

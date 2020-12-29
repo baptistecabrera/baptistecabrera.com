@@ -1,0 +1,36 @@
+# parameters:
+
+# trigger:
+#   branches:
+#     include:
+#     - develop
+#     - master
+#   paths:
+#     exclude:
+#     - .azuredevops/**
+#     - .github/**
+
+# resources:
+#   repositories:
+#     - repository: bca-cicd
+#       type: git
+#       name: bca-cicd
+
+variables:
+- group: CloudFlare
+
+stages:
+- stage: Build
+  displayName: Build Website
+  pool:
+    name: Azure Pipelines
+    vmImage: ubuntu-latest
+  job:
+  - job: Hugo
+    displayName: Build Hugo Website
+    steps:
+    - powershell: Write-Host "toto"
+
+# - template: azuredevops/pipelines/pipeline-sync-repo.yml@bca-cicd
+#   parameters:
+#     syncGitHub: ${{ parameters.syncGitHub }}
