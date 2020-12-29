@@ -63,6 +63,7 @@ stages:
         CleanTargetFolder: true
         OverWrite: true
     - powershell: Get-ChildItem "$(Build.StagingDirectory)" -Recurse  
+      displayName: List Staging Artifacts
     - task: PublishPipelineArtifact@1
       displayName: 'Publish Pipeline Artifact'
       inputs:
