@@ -51,7 +51,7 @@ stages:
     - script: npm install @cloudflare/wrangler
       displayName: Install Wrangler
       workingDirectory: $(artifactPath)
-    - script: CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN npx wrangler publish
+    - script: npx wrangler publish
       displayName: Publish Website
       workingDirectory: $(artifactPath)
       env:
