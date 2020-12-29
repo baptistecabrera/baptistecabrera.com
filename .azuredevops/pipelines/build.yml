@@ -25,7 +25,7 @@ stages:
   pool:
     name: Azure Pipelines
     vmImage: ubuntu-latest
-  job:
+  jobs:
   - job: Hugo
     displayName: Build Hugo Website
     steps:
