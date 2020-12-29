@@ -42,18 +42,24 @@ stages:
   displayName: Build
   pool:
     name: Azure Pipelines
-    vmImage: windows-latest
+    vmImage: ubuntu-latest
+    # vmImage: windows-latest
   jobs:
   - job: Hugo
     displayName: Build Hugo Website
     steps:
-    - task: giuliovdev.hugo-extension.hugo-build-task.HugoTask@1
-      displayName: 'Hugo Generate'
-      inputs:
-        source: $(Build.Repository.LocalPath)/src/
-        destination: $(Build.Repository.LocalPath)/src/public
-        hugoVersion: ${{ parameters.hugoVersion }}
-        buildDrafts: true
+    - script: sudo apt-get install hugo
+      displayName: Install Hugo
+    - script: hugo
+      dispkayName: Hugo Generate
+      workingDirectory: $(Build.Repository.LocalPath)/src
+    # - task: giuliovdev.hugo-extension.hugo-build-task.HugoTask@1
+    #   displayName: 'Hugo Generate'
+    #   inputs:
+    #     source: $(Build.Repository.LocalPath)/src/
+    #     destination: $(Build.Repository.LocalPath)/src/public
+    #     hugoVersion: ${{ parameters.hugoVersion }}
+    #     buildDrafts: true
     - task: CopyFiles@2
       displayName: 'Copy Sources to Staging'
       inputs:
