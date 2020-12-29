@@ -1,13 +1,8 @@
-parameters:
-- name: hugoVersion
-  displayName: Hugo Version
-  type: string
-  default: latest
-- name: syncGitHub
-  displayName: Synchronize repository to GitHub
-  type: boolean
-  default: true
-
+# parameters:
+# - name: syncGitHub
+#   displayName: Synchronize repository to GitHub
+#   type: boolean
+#   default: true
 
 trigger:
   branches:
@@ -43,7 +38,6 @@ stages:
   pool:
     name: Azure Pipelines
     vmImage: ubuntu-latest
-    # vmImage: windows-latest
   jobs:
   - job: Hugo
     displayName: Build Hugo Website
@@ -53,13 +47,6 @@ stages:
     - script: hugo
       displayName: Hugo Generate
       workingDirectory: $(Build.Repository.LocalPath)/src
-    # - task: giuliovdev.hugo-extension.hugo-build-task.HugoTask@1
-    #   displayName: 'Hugo Generate'
-    #   inputs:
-    #     source: $(Build.Repository.LocalPath)/src/
-    #     destination: $(Build.Repository.LocalPath)/src/public
-    #     hugoVersion: ${{ parameters.hugoVersion }}
-    #     buildDrafts: true
     - task: CopyFiles@2
       displayName: 'Copy Sources to Staging'
       inputs:
@@ -83,6 +70,6 @@ stages:
             eq(variables['Build.SourceBranchName'], 'main')
         )
 
-- template: azuredevops/pipelines/pipeline-sync-repo.yml@bca-cicd
-  parameters:
-    syncGitHub: ${{ parameters.syncGitHub }}
+# - template: azuredevops/pipelines/pipeline-sync-repo.yml@bca-cicd
+#   parameters:
+#     syncGitHub: ${{ parameters.syncGitHub }}
