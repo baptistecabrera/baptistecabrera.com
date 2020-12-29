@@ -49,8 +49,8 @@ stages:
       displayName: List Build Artifacts
     - script: |
         cd $(artifactPath)
-        npm install $(artifactPath) @cloudflare/wrangler
-        ls
+        npm install @cloudflare/wrangler
+        ls -R
         #CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN wrangler publish
       displayName: Install Wrangler and Publish
       env:
