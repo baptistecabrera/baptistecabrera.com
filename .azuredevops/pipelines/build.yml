@@ -20,6 +20,10 @@ variables:
 - group: CloudFlare
 
 stages:
+- stage: Initialization
+  displayName: Initialization
+  - powershell: Write-Host "##vso[build.updatebuildnumber]$(Build.DefinitionName)-$(Build.BuildNumber)"
+    displayName: Set Build Number
 - stage: Build
   displayName: Build Website
   pool:
@@ -31,7 +35,7 @@ stages:
     steps:
     - powershell: Write-Host "toto"
     - task: giuliovdev.hugo-extension.hugo-build-task.HugoTask@1
-      displayName: 'Hugo generate s'
+      displayName: 'Hugo Generate'
       inputs:
         source: $(Build.Repository.LocalPath)/src/
         destination: $(Build.Repository.LocalPath)/src/public
@@ -50,6 +54,18 @@ stages:
         CleanTargetFolder: true
         OverWrite: true
     - powershell: Get-ChildItem "$(Build.StagingDirectory)" -Recurse
+    - powershell: Write-Host $(Build.BuildNumber)
+    # - task: PublishPipelineArtifact@1
+    #   displayName: 'Publish Pipeline Artifact'
+    #   inputs:
+    #     targetPath: '$(Build.StagingDirectory)'
+    #     artifact: '$(Build.DefinitionName)-$(Build.BuildNumber)'
+    #   condition: |
+    #     and(
+    #         succeeded(),
+    #         ne(variables['Build.Reason'], 'PullRequest'),
+    #         eq(variables['Build.SourceBranchName'], 'main')
+    #     )
 
 # - template: azuredevops/pipelines/pipeline-sync-repo.yml@bca-cicd
 #   parameters:
