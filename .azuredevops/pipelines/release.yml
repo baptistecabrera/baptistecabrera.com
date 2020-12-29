@@ -47,11 +47,12 @@ stages:
         path: '$(artifactPath)'
     - powershell: Get-ChildItem $(artifactPath) -Recurse
       displayName: List Build Artifacts
-    - script: |
-        cd $(artifactPath)
-        npm install @cloudflare/wrangler
-        CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN npx wrangler publish
-      displayName: Install Wrangler and Publish
+    # - script: npm install @cloudflare/wrangler
+    #   displayName: Install Wrangler
+    #   workingDirectory: $(artifactPath)
+    - script: CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN npx wrangler publish
+      displayName: Publish Website
+      workingDirectory: $(artifactPath)
       env:
         CF_ACCOUNT_ID: $(CloudFlareAccountId)
         CF_API_TOKEN: $(CloudFlareApiToken)
