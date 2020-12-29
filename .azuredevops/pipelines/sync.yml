@@ -20,9 +20,9 @@ resources:
     name: bca-cicd
 
 variables:
-- template: pipelines/azuredevops/variables/all.yml@build-tools
+- template: pipelines/azuredevops/variables/all.yml@bca-cicd
 
 stages: 
-- template: pipelines/azuredevops/pipeline-sync-repo.yml@build-tools
+- template: pipelines/azuredevops/pipeline-sync-repo.yml@bca-cicd
   parameters:
     syncGitHub: ${{ parameters.syncGitHub }}
