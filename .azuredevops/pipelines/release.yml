@@ -50,8 +50,7 @@ stages:
     - script: |
         cd $(artifactPath)
         npm install @cloudflare/wrangler
-        ls -R
-        #CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN wrangler publish
+        CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=CF_API_TOKEN /usr/local/bin/wrangler publish
       displayName: Install Wrangler and Publish
       env:
         CF_ACCOUNT_ID: $(CloudFlareAccountId)
