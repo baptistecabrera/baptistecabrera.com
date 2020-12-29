@@ -22,8 +22,12 @@ variables:
 stages:
 - stage: Initialization
   displayName: Initialization
-  - powershell: Write-Host "##vso[build.updatebuildnumber]$(Build.DefinitionName)-$(Build.BuildNumber)"
-    displayName: Set Build Number
+  jobs:
+  - job: Initialize
+    displayName: Initialize Build
+    steps:
+    - powershell: Write-Host "##vso[build.updatebuildnumber]$(Build.DefinitionName)-$(Build.BuildNumber)"
+      displayName: Set Build Number
 - stage: Build
   displayName: Build Website
   pool:
