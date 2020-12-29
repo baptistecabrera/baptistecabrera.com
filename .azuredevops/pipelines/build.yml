@@ -3,10 +3,10 @@ parameters:
   displayName: Hugo Version
   type: string
   default: latest
-# - name: syncGitHub
-#   displayName: Synchronize repository to GitHub
-#   type: boolean
-#   default: true
+- name: syncGitHub
+  displayName: Synchronize repository to GitHub
+  type: boolean
+  default: true
 
 
 trigger:
@@ -19,11 +19,14 @@ trigger:
     - .azuredevops/**
     - .github/**
 
-# resources:
-#   repositories:
-#     - repository: bca-cicd
-#       type: git
-#       name: bca-cicd
+resources:
+  repositories:
+    - repository: bca-cicd
+      type: git
+      name: bca-cicd
+
+variables:
+- template: pipelines/azuredevops/variables/all.yml@build-tools
 
 stages:
 - stage: Initialization
@@ -62,8 +65,6 @@ stages:
         TargetFolder: '$(Build.StagingDirectory)'
         CleanTargetFolder: true
         OverWrite: true
-    - powershell: Get-ChildItem "$(Build.StagingDirectory)" -Recurse  
-      displayName: List Staging Artifacts
     - task: PublishPipelineArtifact@1
       displayName: 'Publish Pipeline Artifact'
       inputs:
@@ -76,6 +77,6 @@ stages:
             eq(variables['Build.SourceBranchName'], 'main')
         )
 
-# - template: azuredevops/pipelines/pipeline-sync-repo.yml@bca-cicd
-#   parameters:
-#     syncGitHub: ${{ parameters.syncGitHub }}
+- template: azuredevops/pipelines/pipeline-sync-repo.yml@bca-cicd
+  parameters:
+    syncGitHub: ${{ parameters.syncGitHub }}

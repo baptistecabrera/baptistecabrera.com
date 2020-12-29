@@ -1,8 +1,8 @@
 name = "baptistecabrera"
 type = "webpack"
-workers_dev = true
-route = ""
-zone_id = ""
+workers_dev = false
+route = "www.baptistecabrera.com/*"
+zone_id = "24460ff03f37e1bc49e9f6a3cfeeabe8"
 
 [site]
 bucket = "./public"

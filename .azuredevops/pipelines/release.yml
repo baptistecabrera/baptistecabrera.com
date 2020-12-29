@@ -46,8 +46,6 @@ stages:
         runId: '$(resources.pipeline.Build.runID)'
         artifact: '$(resources.pipeline.Build.runName)'
         path: '$(artifactPath)'
-    - powershell: Get-ChildItem $(artifactPath) -Recurse
-      displayName: List Build Artifacts
     - script: npm install @cloudflare/wrangler
       displayName: Install Wrangler
       workingDirectory: $(artifactPath)

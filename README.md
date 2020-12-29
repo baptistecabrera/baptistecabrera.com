@@ -1,20 +1,18 @@
+[![GitHub Release](https://img.shields.io/github/v/tag/baptistecabrera/baptistecabrera.com?logo=github&logoColor=white&label=release)](https://github.com/baptistecabrera/baptistecabrera.com/releases) [![License: MIT](https://img.shields.io/github/license/baptistecabrera/baptistecabrera.com?logo=open-source-initiative&logoColor=white)](https://opensource.org/licenses/MIT)
+
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+This repository contains the sources of [my website](https://www.baptistecabrera.com) and its CI/CD pipelines.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+# Technologies
+This website uses:
+- [Hugo Framework](https://gohugo.io/), that help creating website from markdown files;
+- [CloudFlare Workers](https://workers.cloudflare.com/), to host code on a serverless infrastructure.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+For more about these, and why, learn more with [this blog post](https://www.florianschmitt.ca/blog/ultra-minimalist-website-with-hugo-and-cloudflare-workers    ).
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+# Pipelines
+## CI
+[![Build Status](https://dev.azure.com/baptistecabrera/Bca/_apis/build/status/Build/baptistecabrera.com?branchName=main)](https://dev.azure.com/baptistecabrera/Bca/_build/latest?definitionId=39&branchName=main)
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## CD
+[![Build Status](https://dev.azure.com/baptistecabrera/Bca/_apis/build/status/Release/baptistecabrera.com?branchName=main)](https://dev.azure.com/baptistecabrera/Bca/_build/latest?definitionId=40&branchName=main)
