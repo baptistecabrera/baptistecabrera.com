@@ -3,6 +3,10 @@ parameters:
   displayName: Hugo Version
   type: string
   default: latest
+# - name: syncGitHub
+#   displayName: Synchronize repository to GitHub
+#   type: boolean
+#   default: true
 
 
 trigger:
@@ -21,9 +25,6 @@ trigger:
 #       type: git
 #       name: bca-cicd
 
-variables:
-- group: CloudFlare
-
 stages:
 - stage: Initialization
   displayName: Initialization
@@ -35,7 +36,7 @@ stages:
     - powershell: Write-Host "##vso[build.updatebuildnumber]$(Build.DefinitionName)-$(Build.BuildNumber)"
       displayName: Set Build Number
 - stage: Build
-  displayName: Build Website
+  displayName: Build
   pool:
     name: Azure Pipelines
     vmImage: windows-latest

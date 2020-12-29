@@ -1,0 +1,41 @@
+trigger:
+- none
+
+resources:
+  pipelines:
+  - pipeline: Build
+    source: Build\baptistecabrera.com
+    trigger: 
+      branches:
+      - main
+
+variables:
+- group: CloudFlare
+- name: artifactPath
+  value: $(Pipeline.Workspace)/Build/$(resources.pipeline.Build.runName)
+
+stages:
+- stage: Initialization
+  displayName: Initialization
+  jobs:
+  - job: Initialize
+    displayName: Initialize Release
+    steps:
+    - checkout: none
+    - powershell: Write-Host "##vso[build.updatebuildnumber]$(Build.DefinitionName)-$(Build.BuildNumber)"
+      displayName: Set Build Number
+- stage: Release
+  displayName: Release
+  pool:
+    name: Azure Pipelines
+    vmImage: ubuntu-latest
+  jobs:
+  - job: Release
+    displayName: Release Website
+    - script: npm i @cloudflare/wrangler -g
+      displayName: Install Wrangler
+    - task: DownloadPipelineArtifact@2
+      displayName: 'Download Pipeline Artifact'
+      inputs:
+        artifact: '$(Build.DefinitionName)-$(Build.BuildNumber)'
+        path: '$(Pipeline.Workspace)'
