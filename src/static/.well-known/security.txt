@@ -1,0 +1,4 @@
+Contact: baptiste.cabrera@gmail.com
+Preferred-Languages: en,fr
+Canonical: https://www.baptistecabrera.com/.well-known/security.txt
+Expires: Fri, 31 Dec 2021 00:00:00 -0500
