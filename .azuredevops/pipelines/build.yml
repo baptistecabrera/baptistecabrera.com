@@ -53,6 +53,7 @@ stages:
         SourceFolder: $(Build.Repository.LocalPath)/src
         Contents: |
           public/**
+          workers-site/**
           wrangler.toml
           !**\.gitignore
         TargetFolder: '$(Build.StagingDirectory)'
