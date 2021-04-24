@@ -41,7 +41,28 @@ async function handleEvent(event) {
         bypassCache: true,
       }
     }
-    return await getAssetFromKV(event, options)
+    let resp = await getAssetFromKV(event, {
+      mapRequestToAsset
+    });
+
+    // Make a new response with the same body but using manual encoding.
+    resp = new Response(resp.body, {
+      status: resp.status,
+      headers: resp.headers
+    });
+
+    // Modify headers and return.
+    resp.headers.set("Content-Security-Policy", "base-uri 'self'; frame-ancestors www.baptistecabrera.com baptistecabrera.com; default-src 'none'; script-src 'none'; img-src 'unsafe-inline' 'self' data:; style-src 'self'; font-src 'self'; frame-src; object-src 'none';form-action 'self';connect-src 'self';");
+    resp.headers.set("Permissions-Policy", "interest-cohort=()");
+    resp.headers.set("X-Frame-Options", "DENY");
+    resp.headers.set("X-Frame-Options", "SAMEORIGIN");
+    resp.headers.set("X-XSS-Protection", "1");
+    resp.headers.set("Referrer-Policy", "no-referrer, strict-origin-when-cross-origin");
+    return resp;
+
+    // backup line (when added header modifiers)
+    // return await getAssetFromKV(event, options)
+
   } catch (e) {
     // if an error is thrown try to serve the asset at 404.html
     if (!DEBUG) {
