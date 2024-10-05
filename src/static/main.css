@@ -3,4 +3,4 @@ body{display:flex;flex-direction:column;vertical-align:middle;justify-content:ce
 h1{line-height:1}
 h2,h3{line-height:1;font-weight:lighter}
 img{border-radius:50%}
-a{padding:7px 10px 4px 10px;background:#333;color:#fff;text-decoration:none;border-radius:3px;margin:20px 20px 0 20px;display:inline-block}
+a{padding:7px 10px 4px 10px;background:#333;color:#fff;text-decoration:none;border-radius:3px;margin:20px 20px 40px 20px;display:inline-block}

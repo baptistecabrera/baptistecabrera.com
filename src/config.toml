@@ -8,3 +8,4 @@ disableKinds = ["taxonomy"]
 [markup.goldmark.renderer]
 unsafe= true
 enableEmoji = true
+hrefTargetBlank = true
