@@ -1,6 +1,6 @@
 ---
-title: "Home"
-description: "Description SEO à completer"
+title: "Baptiste Cabrera"
+description: "Engineering Manager, Team Leader, and Agile Practioner - Copenhagen, Denmark"
 ---
 ![Baptiste Cabrera](img/baptiste.webp "Baptiste Cabrera")
 # Baptiste Cabrera
