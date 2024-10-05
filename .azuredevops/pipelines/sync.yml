@@ -9,7 +9,7 @@ trigger:
 
 pool:
   name: Azure Pipelines
-  vmImage: ubuntu-latest
+  vmImage: vs2017-win2016
 
 resources:
   pipelines:
