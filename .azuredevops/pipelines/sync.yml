@@ -7,17 +7,17 @@ parameters:
 trigger:
 - none
 
-# resources:
-#   pipelines:
-#   - pipeline: Release
-#     source: Release\baptistecabrera.com
-#     trigger: 
-#       branches:
-#       - main
-#   repositories:
-#   - repository: bca-cicd
-#     type: git
-#     name: bca-cicd
+resources:
+  pipelines:
+  - pipeline: Release
+    source: Release\baptistecabrera.com
+    trigger: 
+      branches:
+      - main
+  repositories:
+  - repository: bca-cicd
+    type: git
+    name: bca-cicd
 
 variables:
 - template: azuredevops/pipelines/variables/all.yml@bca-cicd
