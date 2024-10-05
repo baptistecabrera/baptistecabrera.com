@@ -13,6 +13,8 @@ variables:
 - group: CloudFlare
 - name: artifactPath
   value: $(Pipeline.Workspace)/Build/$(resources.pipeline.Build.runName)
+- name: compatibilityDate
+  value: $[ format('{0:yyyy}-{0:MM}-{0:dd}', pipeline.startTime) ]
 
 stages:
 - stage: Initialization
@@ -27,6 +29,8 @@ stages:
     - checkout: none
     - powershell: Write-Host "##vso[build.updatebuildnumber]$(Build.DefinitionName)-$(Build.BuildNumber)"
       displayName: Set Build Number
+    - script: echo $(compatibilityDate)
+      displayName: Set Compatibility Date
 - stage: Release
   displayName: Release
   pool:
@@ -52,9 +56,9 @@ stages:
     - script: npm install -g wrangler
       displayName: Install Wrangler
       workingDirectory: $(artifactPath)
-    - script: npx wrangler deploy --compatibility-date $(Date:yyyy-MM-dd)
+    - script: npx wrangler deploy --compatibility-date '$(compatibilityDate)''
       displayName: Deploy Website
       workingDirectory: $(artifactPath)
       env:
         CLOUDFLARE_ACCOUNT_ID: $(CloudFlareAccountId)
-        CF_API_TOKEN: $(CloudFlareApiToken)
+        CLOUDFLARE_API_TOKEN: $(CloudFlareApiToken)

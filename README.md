@@ -8,7 +8,7 @@ This website uses:
 - [Hugo Framework](https://gohugo.io/), that help creating website from markdown files;
 - [CloudFlare Workers](https://workers.cloudflare.com/), to host code on a serverless infrastructure.
 
-For more about these technologies, and why using them, go read [this blog post](https://www.florianschmitt.ca/blog/ultra-minimalist-website-with-hugo-and-cloudflare-workers    ).
+For more about these technologies, and why using them, go read [this blog post](https://www.florianschmitt.tech/blog/ultra-minimalist-website-with-hugo-and-cloudflare-workers    ).
 
 # Pipelines
 ## CI
