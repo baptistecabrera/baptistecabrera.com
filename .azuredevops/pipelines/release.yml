@@ -56,7 +56,7 @@ stages:
     - script: npm install -g wrangler
       displayName: Install Wrangler
       workingDirectory: $(artifactPath)
-    - script: npm install @cloudflare/kv-asset-handler@0.0.11
+    - script: npm install @cloudflare/kv-asset-handler #@0.0.11
       displayName: Install KV Asset Handler
       workingDirectory: $(artifactPath)
     - script: npx wrangler deploy --compatibility-date $(compatibilityDate)
