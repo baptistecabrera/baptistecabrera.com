@@ -49,7 +49,7 @@ stages:
         runId: '$(resources.pipeline.Build.runID)'
         artifact: '$(resources.pipeline.Build.runName)'
         path: '$(artifactPath)'
-    - script: npm install @cloudflare/wrangler
+    - script: npm install -g wrangler
       displayName: Install Wrangler
       workingDirectory: $(artifactPath)
     - script: npx wrangler publish
