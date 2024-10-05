@@ -56,7 +56,7 @@ stages:
     - script: npm install -g wrangler
       displayName: Install Wrangler
       workingDirectory: $(artifactPath)
-    - script: npx wrangler deploy --compatibility-date '$(compatibilityDate)''
+    - script: npx wrangler deploy --compatibility-date $(compatibilityDate)
       displayName: Deploy Website
       workingDirectory: $(artifactPath)
       env:
