@@ -1,7 +1,8 @@
 trigger:
   branches:
     include:
-    - '*'
+    - develop
+    - main
   paths:
     exclude:
     - .azuredevops/**
