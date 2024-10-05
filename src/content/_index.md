@@ -13,3 +13,7 @@ _I have notably managed Platform Engineering and Development teams, helped some 
 _Also acting as a Product Owner and Service Manager, I have acquired an entrepreneurial mindset. I’m inclusive, open-minded and can bring people together which helps me resolve conflicts and help people go in the same direction._
 
 _Today, I would love to offer these skills in helping develop and evolve your teams and their practices, as well as your organization._
+
+<br>
+
+[Read more about the inspiration behind this website here](https://florianschmitt.tech/blog/on-bulding-a-minimalist-website/)
