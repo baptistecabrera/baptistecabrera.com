@@ -1,27 +1,11 @@
-# parameters:
-# - name: syncGitHub
-#   displayName: Synchronize repository to GitHub
-#   type: boolean
-#   default: true
-
 trigger:
   branches:
     include:
-    - develop
-    - main
+    - *
   paths:
     exclude:
     - .azuredevops/**
     - .github/**
-
-resources:
-  repositories:
-    - repository: bca-cicd
-      type: git
-      name: bca-cicd
-
-variables:
-- template: azuredevops/pipelines/variables/all.yml@bca-cicd
 
 stages:
 - stage: Initialization
