@@ -7,6 +7,10 @@ parameters:
 trigger:
 - none
 
+pool:
+  name: Azure Pipelines
+  vmImage: windows-latest
+
 resources:
   pipelines:
   - pipeline: Release
@@ -24,8 +28,5 @@ variables:
 
 stages: 
 - template: azuredevops/pipelines/pipeline-sync-repo.yml@bca-cicd
-  pool:
-    name: Azure Pipelines
-    vmImage: ubuntu-latest
   parameters:
     syncGitHub: ${{ parameters.syncGitHub }}
