@@ -16,3 +16,6 @@ For more about these technologies, and why using them, go read [this blog post](
 
 ## CD
 [![Build Status](https://dev.azure.com/baptistecabrera/Bca/_apis/build/status/Release/baptistecabrera.com?branchName=main)](https://dev.azure.com/baptistecabrera/Bca/_build/latest?definitionId=40&branchName=main)
+
+## Sync
+[![Build Status](https://dev.azure.com/baptistecabrera/Bca/_apis/build/status/Release/baptistecabrera.com?branchName=main)](https://dev.azure.com/baptistecabrera/Bca/_build/latest?definitionId=41&branchName=main)
