@@ -4,6 +4,8 @@ title = "Baptiste Cabrera"
 theme = "baptiste2021"
 enableRobotsTXT = true
 disableHugoGeneratorInject = true
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy"]
 [markup.goldmark.renderer]
 unsafe= true
+enableEmoji = true
+hrefTargetBlank = true
