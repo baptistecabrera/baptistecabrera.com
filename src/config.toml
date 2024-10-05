@@ -7,3 +7,4 @@ disableHugoGeneratorInject = true
 disableKinds = ["taxonomy"]
 [markup.goldmark.renderer]
 unsafe= true
+enableEmoji = true
