@@ -52,9 +52,9 @@ stages:
     - script: npm install -g wrangler
       displayName: Install Wrangler
       workingDirectory: $(artifactPath)
-    - script: npx wrangler publish
-      displayName: Publish Website
+    - script: npx wrangler deploy --compatibility-date $(Date:yyyy-MM-dd)
+      displayName: Deploy Website
       workingDirectory: $(artifactPath)
       env:
-        CF_ACCOUNT_ID: $(CloudFlareAccountId)
+        CLOUDFLARE_ACCOUNT_ID: $(CloudFlareAccountId)
         CF_API_TOKEN: $(CloudFlareApiToken)
