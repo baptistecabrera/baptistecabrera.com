@@ -7,6 +7,7 @@ description: "Engineering Manager, Team Leader, and Agile Practioner - Copenhage
 ## Engineering Manager, Team Leader, and Agile Practioner
 
 [Email](mailto:baptiste.cabrera@gmail.com) [LinkedIn](https://www.linkedin.com/in/baptistecabrera) [Resume](res/CV_BCabrera_EN.pdf) [GitHub](https://github.com/baptistecabrera)
+[Find my PowerShell modules on PowerShell Gallery](https://www.powershellgallery.com/profiles/bca)
 
 _With over 15 years of experience, my journey took me from Paris to Montreal, then Copenhagen, wearing many hats in my career._
 _I have notably managed Platform Engineering and Development teams, helped some spring, and actively participated in transforming others toward Agile and DevOps methodologies._
