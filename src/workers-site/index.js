@@ -52,7 +52,7 @@ async function handleEvent(event) {
     });
 
     // Modify headers and return.
-    resp.headers.set("Content-Security-Policy", "base-uri 'self'; frame-ancestors www.baptistecabrera.com baptistecabrera.com; default-src 'none'; script-src 'none'; img-src 'unsafe-inline' 'self' data:; style-src 'self'; font-src 'self'; frame-src; object-src 'none';form-action 'self';connect-src 'self';");
+    resp.headers.set("Content-Security-Policy", "base-uri 'self'; frame-ancestors www.baptistecabrera.com baptistecabrera.com; default-src 'none'; script-src 'self'; img-src 'unsafe-inline' 'self' data:; style-src 'self'; font-src 'self'; frame-src; object-src 'none';form-action 'self';connect-src 'self';");
     resp.headers.set("Permissions-Policy", "interest-cohort=()");
     resp.headers.set("X-Frame-Options", "DENY");
     resp.headers.set("X-Frame-Options", "SAMEORIGIN");
