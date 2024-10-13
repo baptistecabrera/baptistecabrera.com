@@ -154,7 +154,6 @@ disableHugoGeneratorInject = false
    [params.portrait]
      path     = "img/baptiste.webp"
      alt      = "Baptiste Cabrera"
-     maxWidth = "250px"
 
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
   # Addon: Commento
