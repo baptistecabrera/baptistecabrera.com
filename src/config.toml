@@ -1,7 +1,7 @@
 baseURL = "https://www.baptistecabrera.com/"
 languageCode = "en-us"
 title = "Baptiste Cabrera"
-theme = "hello-friend-ng"
+theme = "hello-friend-ng-local"
 
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
