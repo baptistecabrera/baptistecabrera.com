@@ -1,14 +1,14 @@
-baseURL = "https://www.baptistecabrera.com/"
+baseURL = "https://example.com"
+title   = "Hello Friend NG"
 languageCode = "en-us"
-title = "Baptiste Cabrera"
-theme = "hello-friend-ng-local"
+theme = "hello-friend-ng"
 
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
 
-#paginate  = 10
-#rssLimit  = 10  # Maximum number of items in the RSS feed.
-#copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+paginate  = 10
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
 # googleAnalytics = ""
 # disqusShortname = ""
@@ -40,9 +40,9 @@ disableHugoGeneratorInject = false
   hrefTargetBlank = true
 
 [taxonomies]
-  #tag      = "tags"
-  #category = "categories"
-  #series   = "series"
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
 
 [params]
 
@@ -53,13 +53,13 @@ disableHugoGeneratorInject = false
 
   # Metadata mostly used in document's head
   # 
-  description = "Engineering Manager, Team Leader, and Agile Practioner - Copenhagen, Denmark"
+  description = "Nice theme for homepages and blogs"
   keywords = ""
   images = [""]
 
   # Home subtitle of the index page.
   #
-  homeSubtitle = "Engineering Manager, Team Leader, and Agile Practioner"
+  homeSubtitle = "Hello Friend NG"
 
   # Set a background for the homepage
   # backgroundImage = "assets/images/background.jpg"
@@ -70,7 +70,7 @@ disableHugoGeneratorInject = false
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   #
-  disableReadOtherPosts = true
+  disableReadOtherPosts = false
 
   # Enable theme toggle
   # 
@@ -78,7 +78,7 @@ disableHugoGeneratorInject = false
   # Per default, this option is off. 
   # The theme is respecting the prefers-color-scheme of the operating system. 
   # With this option on, the page user is able to set the scheme he wants. 
-  enableThemeToggle = true
+  enableThemeToggle = false
 
   # Sharing buttons
   #
@@ -86,18 +86,18 @@ disableHugoGeneratorInject = false
   # generate the buttons here: https://sharingbuttons.io
   # and add them into your own `layouts/partials/sharing-buttons.html`
   #
-  enableSharingButtons = false
+  enableSharingButtons = true
 
   # Global language menu
   #
   # Enables the global language menu.
   #
-  enableGlobalLanguageMenu = false
+  enableGlobalLanguageMenu = true
 
   # Integrate Javascript files or stylesheets by adding the url to the external assets or by
   # linking local files with their path relative to the static folder, e.g. "css/styles.css"
   #
-  customCSS = ["css/override.css"]
+  customCSS = []
   customJS  = []
 
   # Toggle this option need to rebuild SCSS, requires extended version of Hugo
@@ -109,20 +109,21 @@ disableHugoGeneratorInject = false
   # plausibleScriptSource = 'https://plausible.io/js/script.js'
 
   [params.author]
-    name = "Baptiste Cabrera"
+    name = "Jane Doe"
 
   # Custom footer 
   # If you want, you can easily override the default footer with your own content. 
   #
   [params.footer]
-    #trademark = 2023
-    #rss = true
-    #copyright = true
-    #author = true
+    trademark = 2023
+    rss = true
+    copyright = true
+    author = true
 
     topText = []
     bottomText = [
-      "Read more about the inspiration behind this website <a href=\"https://florianschmitt.tech/blog/on-bulding-a-minimalist-website/\" class=\"custlink\">here</a>",
+      "Powered by <a href=\"http://gohugo.io\">Hugo</a>",
+      "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
     ]
 
   # Colors for favicons
@@ -133,13 +134,13 @@ disableHugoGeneratorInject = false
     theme = "#1b1c1d"
 
   [params.logo]
-    logoMark     = "$"
-    logoText     = "> cd /home/"
+    logoMark     = ">"
+    logoText     = "$ cd /home/"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
     # logoCursorDisabled = false
     # Set to a valid CSS color to change the cursor in the logo.
-    logoCursorColor    = "#008080"
+    # logoCursorColor    = "#67a2c9"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
     # logoCursorAnimate  = "2s"
     # Append the current url pathname to logoText 
@@ -150,10 +151,10 @@ disableHugoGeneratorInject = false
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   # Uncomment this if you want a portrait on your start page
   #
-   [params.portrait]
-     path     = "img/baptiste.webp"
-     alt      = "Baptiste Cabrera"
-     maxWidth = "250px"
+  # [params.portrait]
+  #   path     = "/img/image.jpg"
+  #   alt      = "Portrait"
+  #   maxWidth = "50px"
 
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
   # Addon: Commento
@@ -214,31 +215,37 @@ disableHugoGeneratorInject = false
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   #
   [[params.social]]
-    name = "email"
-    url  = "mailto:baptiste.cabrera@gmail.com"
+    name = "twitter"
+    url  = "https://twitter.com/"
 
   [[params.social]]
-    name = "linkedin"
-    url  = "https://www.linkedin.com/in/baptistecabrera"
+    name = "email"
+    url  = "mailto:nobody@example.com"
 
   [[params.social]]
     name = "github"
-    url  = "https://github.com/baptistecabrera"
+    url  = "https://github.com/"
 
   [[params.social]]
-    name = "case"
-    url  = "res/CV_BCabrera_EN.pdf"
+    name = "linkedin"
+    url  = "https://www.linkedin.com/"
 
   [[params.social]]
-    name = "signal"
-    url  = "https://signal.me/#eu/3uRk55gbpR0hEUeb0H6PNx_AIJIc82d416tx1m1DcXeQ_XzYvf9ICrNOgg10KAp6"
+    name = "stackoverflow"
+    url  = "https://www.stackoverflow.com/"
 
 [languages]
   [languages.en]
     weight    = 1
-    #copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   [languages.en.params]
-    subtitle  = "Engineering Manager, Team Leader, and Agile Practioner"
+    subtitle  = "Hello Friend NG Theme"
+
+  [languages.fr]
+    weight    = 2
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+  [languages.fr.params]
+    subtitle  = "Hello Friend NG Theme"
 
 [menu]
   [[menu.main]]
@@ -246,6 +253,6 @@ disableHugoGeneratorInject = false
     name       = "About"
     url        = "about/"
   [[menu.main]]
-    identifier = "contributions"
-    name       = "Contributions"
-    url        = "contributions/"
+    identifier = "posts"
+    name       = "Posts"
+    url        = "posts/"
