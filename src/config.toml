@@ -1,4 +1,4 @@
-# base config
+# Base Config
 baseURL = "https://www.baptistecabrera.com/"
 languageCode = "en-us"
 title = "Baptiste Cabrera"

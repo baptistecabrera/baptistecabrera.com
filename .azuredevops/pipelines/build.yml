@@ -13,7 +13,7 @@ stages:
   displayName: Initialization
   pool:
     name: Azure Pipelines
-    vmImage: windows-latest
+    vmImage: ubuntu-latest
   jobs:
   - job: Initialize
     displayName: Initialize Build
@@ -30,9 +30,9 @@ stages:
   - job: Hugo
     displayName: Build Hugo Website
     steps:
-#    - script: sudo apt-get install hugo
-#      displayName: Install Hugo
-    - pwsh: winget install Hugo.Hugo.Extended
+    - script: |
+        sudo apt-get update
+        sudo apt-get install hugo
       displayName: Install Hugo
     - script: hugo
       displayName: Hugo Generate
