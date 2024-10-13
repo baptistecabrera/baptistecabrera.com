@@ -30,7 +30,7 @@ stages:
   - job: Hugo
     displayName: Build Hugo Website
     steps:
-    - script: sudo apt-get install hugo
+    - script: sudo snap install hugo
       displayName: Install Hugo
     - script: hugo
       displayName: Hugo Generate
